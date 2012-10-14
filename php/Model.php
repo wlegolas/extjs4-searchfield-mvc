@@ -118,10 +118,10 @@ Class Model {
 	 */
 	private function removeConstants($query) {
 		// Constantes a serem removidas
-		$constants = ['[FIELDS]', '[CONDITIONS]', '[ORDER_BY]', '[START]', '[LIMIT]'];
+		$constants = array('[FIELDS]', '[CONDITIONS]', '[ORDER_BY]', '[START]', '[LIMIT]');
 		
 		// Valores a serem alterados
-		$defaultValues = ['*', '1=1', 'ID ASC', '0', '50'];
+		$defaultValues = array('*', '1=1', 'ID ASC', '0', '50');
 		
 		// Trocando os valores das constantes
 		$query = str_replace($constants, $defaultValues, $query);
