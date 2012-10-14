@@ -136,7 +136,7 @@ Class Model {
 	 */
 	public function query($query) {
 		// Realizando a consulta
-		$result = mysql_query($query) or die(mysql_error());
+		$result = mysql_query($query, $this->conn) or die(mysql_error());
 		
 		return $this->formatResult($result);
 	}
@@ -155,22 +155,6 @@ Class Model {
 		}
 
 		return $data;
-	}
-	
-	/**
-	 * Método que irá criar o Array com os filtros a serem aplicados
-	 * @param {Array} $conditions Array com os filtros
-	 * @return {String} Retorna um Array com as condições formatadas
-	 */
-	public function getConditions($conditions) {
-		$filtes = '';
-		
-		foreach ($conditions as $key => $filter) {
-			echo '<pre>', print_r($filter), '</pre>';
-			$filtes .= sprintf("%s %s '%s'", $filter['property'], $filter['operator'], $filter['property']);
-		}
-		
-		return $filtes;
 	}
 }	
 ?>
