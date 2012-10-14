@@ -1,12 +1,14 @@
 Ext.Loader.setConfig({
-	 enabled: true
+     enabled: true
+    ,paths: {
+         'Ext': 'extjs/scr'
+        ,'Ext.ux': 'extjs/ux'
+    }
 });
-Ext.Loader.setPath('Ext', 'extjs/scr');
-Ext.Loader.setPath('Ext.ux', 'extjs/ux');
 
 Ext.application({
      name: 'ExtApp'
     ,appFolder: 'app'
     ,controllers: [ 'Pages', 'Personagens' ]
-	,autoCreateViewport : true
+    ,autoCreateViewport : true
 });
